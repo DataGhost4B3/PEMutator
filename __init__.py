@@ -34,13 +34,33 @@ from pemutator.analysis.delta  import (
     group_deltas,
     FEATURE_GROUPS,
 )
+from pemutator.analysis.evasion import (
+    RandomEvasion,
+    GreedyEvasion,
+    run_evasion_campaign,
+    evasion_summary,
+)
+from pemutator.analysis.fingerprint import (
+    ModelFingerprint,
+    empirical_importance,
+    attack_surface,
+    compare_fingerprints,
+)
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __all__ = [
+    # core
     "FeatureExtractor",
     "build_models", "train_models",
     "append_bytes", "add_import", "pad_header", "rename_section", "MUTATIONS",
+    # analysis
     "probe_sample",
     "size_sweep", "mutation_sensitivity",
     "feature_delta", "dominant_features", "group_deltas", "FEATURE_GROUPS",
+    # evasion
+    "RandomEvasion", "GreedyEvasion",
+    "run_evasion_campaign", "evasion_summary",
+    # fingerprint
+    "ModelFingerprint", "empirical_importance",
+    "attack_surface", "compare_fingerprints",
 ]
