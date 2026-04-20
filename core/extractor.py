@@ -41,7 +41,7 @@ class FeatureExtractor:
         Dimensionality of the feature vector (typically 2350).
     """
 
-    def __init__(self, gym_malware_utils: str | None = None):
+    def __init__(self, gym_malware_utils = None):
         global _EXTRACTOR
 
         if gym_malware_utils and gym_malware_utils not in sys.path:
@@ -104,7 +104,7 @@ class FeatureExtractor:
         with open(path, "rb") as fh:
             return self.extract(fh.read())
 
-    def extract_batch(self, paths: list[str]) -> np.ndarray:
+    def extract_batch(self, paths) -> np.ndarray:
         """
         Extract features for a list of PE file paths.
 
